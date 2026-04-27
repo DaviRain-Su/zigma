@@ -1,0 +1,3 @@
+[submodule "deps/mlx-serve"]
+	path = deps/mlx-serve
+	url = https://github.com/ddalcu/mlx-serve.git
