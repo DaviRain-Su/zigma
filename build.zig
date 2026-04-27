@@ -41,13 +41,13 @@ pub fn build(b: *std.Build) void {
     mod.addCSourceFile(.{ .file = b.path("deps/mlx-serve/lib/stb_image_impl.c"), .flags = &.{"-O2"} });
     mod.addIncludePath(b.path("deps/mlx-serve/lib"));
 
+    mod.linkFramework("IOKit", .{});
+    mod.linkFramework("CoreFoundation", .{});
+
     const exe = b.addExecutable(.{
         .name = "zigma",
         .root_module = mod,
     });
-
-    exe.linkFramework("IOKit");
-    exe.linkFramework("CoreFoundation");
 
     b.installArtifact(exe);
 
