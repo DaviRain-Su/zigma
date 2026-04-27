@@ -1,2 +1,7 @@
 .zig-cache
 zig-out
+.DS_Store
+*.o
+*.a
+deps/**/zig-out
+deps/**/.zig-cache
